@@ -3,8 +3,8 @@ A   Baby   class and functions that use/test it.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Done.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -98,7 +98,27 @@ def main():
 #         'Baby <your baby's name> is CRYING uncontrollably!  Feed the Baby!'
 #
 ###############################################################################
+class Baby(object):
+    def __init__(self, name):
+        self.name = name
+        count = 0
+        self.feed = 2
+        print()
+        print("hello baby",self.name)
 
+    def hour_passes(self):
+        if self.feed == 2:
+            print("Baby",self.name,"is sleeping.")
+            self.feed = 1
+        elif self.feed == 1:
+            print("Baby", self.name, "is awake")
+            self.feed =0
+        else:
+            print("Baby", self.name, "is CRYING uncontrollably! Feed the Baby!")
+
+    def feed_baby(self):
+        self.feed = 2
+        print("Thank you for feeding baby",self.name)
 ###############################################################################
 # The   Baby   class (and its methods) should begins here.
 # Here is a reminder for the syntax to create a new class.
