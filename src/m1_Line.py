@@ -174,6 +174,7 @@ class Point(object):
 ###############################################################################
 # The   Line   class (and its methods) begins here.
 ###############################################################################
+globvar = 0
 class Line(object):
     """ Represents a line segment in 2-dimensional space. """
 
@@ -225,10 +226,11 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
+        globvar = self
         self.start = start.clone()
         self.end = end.clone()
-        self.start0 = start.clone()
-        self.end0 = end.clone()
+        globvar.start0 = start
+        globvar.end0 = end
         self.clones = 0
 
     def __repr__(self):
@@ -635,7 +637,7 @@ class Line(object):
         """
         slope1 = self.slope()
         slope2 = line2.slope()
-        return slope1 == slope2
+        return round(slope1, 12) == round(slope2, 12)
         # ---------------------------------------------------------------------
         # Done: 12.
         #   a. READ the above specification, including the Example.
